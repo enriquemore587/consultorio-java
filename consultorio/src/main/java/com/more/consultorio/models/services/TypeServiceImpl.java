@@ -1,0 +1,24 @@
+package com.more.consultorio.models.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.more.consultorio.models.dao.ITypeUserDao;
+import com.more.consultorio.models.entity.TypeUser;
+
+@Service
+public class TypeServiceImpl implements ITypeUserService {
+
+	@Autowired
+	private ITypeUserDao typeUserDao;
+	
+	@Override
+	@Transactional(readOnly=true)
+	public List<TypeUser> findAll() {
+		return (List<TypeUser>) this.typeUserDao.findAll();
+	}
+
+}

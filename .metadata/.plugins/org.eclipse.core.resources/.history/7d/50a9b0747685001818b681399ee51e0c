@@ -1,0 +1,5 @@
+package com.more.consultorio.models.dao;
+
+public interface ITypeUser {
+
+}
